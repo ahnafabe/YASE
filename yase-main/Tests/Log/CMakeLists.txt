@@ -1,0 +1,4 @@
+add_executable(log_manager_test log_manager_test.cc)
+target_link_libraries(log_manager_test gtest glog gflags gtest_main pthread logmanager lockmanager)
+add_test(NAME log_manager_test COMMAND log_manager_test)
+add_custom_target(log_manager_test_custom COMMAND ${CMAKE_CTEST_COMMAND} DEPENDS log_manager_test)
